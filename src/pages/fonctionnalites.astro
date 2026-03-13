@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: "📅",
+    title: "Calendrier familial",
+    description: "Vue mensuelle et hebdomadaire partagée entre tous les membres. Créez des événements, assignez-les à des membres spécifiques, ajoutez des rappels.",
+    details: ["Synchronisation Google Calendar (OAuth2 sécurisé)", "Synchronisation Microsoft Calendar (en cours)", "Couleur par compte et par membre", "Vue murale simplifiée"],
+    color: "violet"
+  },
+  {
+    icon: "✅",
+    title: "Corvées gamifiées",
+    description: "Transformez les tâches du quotidien en missions. Les enfants et ados gagnent des points, maintiennent des streaks et débloquent des récompenses.",
+    details: ["Création de corvées récurrentes ou ponctuelles", "Système de points configurable", "Streaks hebdomadaires", "Validation parentale", "Historique des completions"],
+    color: "indigo"
+  },
+  {
+    icon: "🛒",
+    title: "Liste de courses multi-magasin",
+    description: "Gérez vos achats par magasin, en temps réel et de manière collaborative. Tous les membres de la famille peuvent ajouter des articles depuis leur appareil.",
+    details: ["Onglets par magasin (Carrefour, Leclerc, etc.)", "Catégories adaptatives automatiques", "Cochage temps réel synchronisé", "Scanner OCR de ticket de caisse", "Import automatique des articles depuis une photo"],
+    color: "violet"
+  },
+  {
+    icon: "🍽️",
+    title: "Planning repas",
+    description: "Planifiez les repas de la semaine pour toute la famille. Liez directement les ingrédients à votre liste de courses.",
+    details: ["Planning hebdomadaire", "Repas par type (déjeuner, dîner)", "Ajout rapide aux courses", "Historique des menus"],
+    color: "indigo"
+  },
+  {
+    icon: "🎵",
+    title: "Musique (Spotify)",
+    description: "Contrôlez Spotify depuis l'interface murale ou parentale. Musique d'ambiance pour toute la maison, sans sortir de l'app.",
+    details: ["Connexion Spotify OAuth2 sécurisée", "Lecture / pause / suivant", "Affichage pochette et titre", "Intégré au mode mur"],
+    color: "violet"
+  },
+  {
+    icon: "🌤️",
+    title: "Météo",
+    description: "Météo locale affichée sur le mode mur et le dashboard. Données Open-Meteo, 100% gratuites, sans clé API.",
+    details: ["Géocodage via API BAN (France)", "Prévisions sur 7 jours", "Température, vent, précipitations", "Mise à jour automatique"],
+    color: "indigo"
+  },
+  {
+    icon: "🖥️",
+    title: "Mode tablette murale",
+    description: "Accrochez une tablette dans le couloir et activez le mode mur. L'application se transforme en hub familial permanent, lisible à 1 mètre.",
+    details: ["5 thèmes dark : Glassmorphism, Ocean, Nature, Nuit étoilée, Aurore", "Horloge grand format", "Police 24px+ anti-burn-in", "Rotation automatique des informations", "Mode kiosque (plein écran)"],
+    color: "violet"
+  },
+  {
+    icon: "👥",
+    title: "3 profils adaptatifs",
+    description: "L'interface s'adapte automatiquement selon le profil actif : Parent, Ado ou Enfant. Chaque génération a son expérience propre.",
+    details: ["Parent : dashboard complet + contrôles parentaux", "Ado (11-17) : gamifié, gradient violet, social", "Enfant (6-10) : simplifié, gros éléments, ludique", "Changement de profil en un tap (FAB)"],
+    color: "indigo"
+  }
+];
+---
+
+<Layout
+  title="Fonctionnalités — Marmouse"
+  description="Calendrier familial, corvées gamifiées, liste de courses avec OCR, planning repas, Spotify, météo et mode tablette murale. Tout ce dont une famille a besoin."
+>
+  <!-- Header section -->
+  <section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-violet-800/50 bg-violet-950/50 px-4 py-1.5 text-xs font-medium text-violet-300 mb-6">
+          Fonctionnalités
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+          Tout ce que Marmouse sait faire
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-slate-400 leading-relaxed">
+          Chaque fonctionnalité est conçue pour fonctionner hors ligne, chiffrée, sans envoyer vos données à des tiers.
+        </p>
+      </div>
+
+      <!-- Features list -->
+      <div class="space-y-8">
+        {features.map((feature, i) => (
+          <div class={`rounded-2xl border border-slate-800 bg-slate-900/50 p-8 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex gap-8 items-start`}>
+            <!-- Icon + Title -->
+            <div class="lg:w-64 flex-shrink-0">
+              <div class={`w-14 h-14 rounded-2xl ${feature.color === 'violet' ? 'bg-violet-900/50' : 'bg-indigo-900/50'} flex items-center justify-center text-3xl mb-4`}>
+                {feature.icon}
+              </div>
+              <h2 class="text-xl font-bold text-white mb-2">{feature.title}</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
+            </div>
+
+            <!-- Details -->
+            <div class="flex-1">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {feature.details.map(detail => (
+                  <div class="flex items-start gap-2">
+                    <svg class={`w-4 h-4 mt-0.5 flex-shrink-0 ${feature.color === 'violet' ? 'text-violet-400' : 'text-indigo-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-slate-300 text-sm">{detail}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 border-t border-slate-800/50">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Prêt à essayer ?</h2>
+      <p class="text-slate-400 mb-8">30 jours gratuits. Toutes les fonctionnalités incluses.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://app.marmouse.fr"
+          class="rounded-xl bg-violet-600 px-8 py-4 font-semibold text-white hover:bg-violet-500 transition-colors"
+        >
+          Commencer gratuitement
+        </a>
+        <a
+          href="/tarifs"
+          class="rounded-xl border border-slate-700 bg-slate-900 px-8 py-4 font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+        >
+          Voir les tarifs
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Marmouse — Application familiale locale, chiffrée, sans cloud." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse.fr');
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/90 backdrop-blur-md">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-2 text-xl font-bold text-white hover:opacity-90 transition-opacity">
+            <span class="text-2xl">🐭</span>
+            <span>Marmouse</span>
+          </a>
+
+          <!-- Nav desktop -->
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="/fonctionnalites" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Fonctionnalités</a>
+            <a href="/tarifs" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Tarifs</a>
+            <a href="/philosophie" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Philosophie</a>
+            <a href="/contact" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Contact</a>
+          </nav>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-3">
+            <a
+              href="https://app.marmouse.fr"
+              class="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-900/30 hover:bg-violet-500 transition-colors"
+            >
+              Essayer
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/60 bg-slate-950 py-12">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2 text-slate-400">
+            <span class="text-lg">🐭</span>
+            <span class="font-semibold text-white">Marmouse</span>
+          </div>
+          <div class="flex items-center gap-6 text-sm text-slate-500">
+            <a href="/philosophie" class="hover:text-slate-300 transition-colors">Philosophie</a>
+            <a href="https://github.com/julienlivenais/marmouse" class="hover:text-slate-300 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/contact" class="hover:text-slate-300 transition-colors">Contact</a>
+          </div>
+          <p class="text-sm text-slate-600">
+            &copy; 2026 Marmouse &mdash; Fait en France 🇫🇷
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #7c3aed;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Philosophie — Marmouse"
+  description="Local-first, chiffrement E2E, RGPD by design. Marmouse est construit sur une conviction : vos données familiales n'appartiennent qu'à vous."
+>
+  <!-- Header -->
+  <section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-violet-800/50 bg-violet-950/50 px-4 py-1.5 text-xs font-medium text-violet-300 mb-6">
+          Philosophie
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+          Construit sur une conviction
+        </h1>
+        <p class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          Vos données familiales sont parmi les plus sensibles qui existent. Elles méritent la protection maximale &mdash; pas une promesse marketing, une garantie cryptographique.
+        </p>
+      </div>
+
+      <!-- Principles -->
+      <div class="space-y-16">
+
+        <!-- Local-first -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="w-16 h-16 rounded-2xl bg-violet-900/50 flex items-center justify-center text-3xl mb-4">
+              🏠
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Local-first</h2>
+            <p class="text-violet-400 font-medium text-sm">Vos données restent chez vous</p>
+          </div>
+          <div class="md:col-span-8 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              La plupart des applications stockent vos données sur leurs serveurs. C'est pratique pour eux, risqué pour vous.
+              En cas de fuite, de rachat, de fermeture ou de changement de politique de confidentialité &mdash; vos données familiales sont exposées.
+            </p>
+            <p>
+              Marmouse fait l'inverse. Vos données vivent sur vos appareils, synchronisées directement entre eux via des CRDTs (Conflict-Free Replicated Data Types).
+              Le serveur ne voit que des blobs chiffrés qu'il ne peut pas déchiffrer. Même si notre infrastructure était compromise, vos données resteraient illisibles.
+            </p>
+            <div class="rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm">
+              <span class="text-slate-300 font-medium">Technologie :</span>
+              <span class="text-slate-500"> Jazz CRDT &mdash; synchronisation P2P chiffrée, offline-first, sans conflit.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800/50"></div>
+
+        <!-- Chiffrement E2E -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="w-16 h-16 rounded-2xl bg-indigo-900/50 flex items-center justify-center text-3xl mb-4">
+              🔐
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Chiffrement E2E</h2>
+            <p class="text-indigo-400 font-medium text-sm">Même nous ne pouvons pas lire vos données</p>
+          </div>
+          <div class="md:col-span-8 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              Le chiffrement bout-à-bout (E2E) signifie que les données sont chiffrées sur votre appareil avant d'être transmises,
+              et ne peuvent être déchiffrées que par les appareils de votre famille qui possèdent les clés.
+            </p>
+            <p>
+              Ce n'est pas une fonctionnalité optionnelle, c'est le fondement de l'architecture.
+              Aucune donnée en clair ne transite par nos serveurs. Jamais.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <div class="text-slate-300 font-medium mb-1">Hash</div>
+                <div class="text-slate-600 text-xs">BLAKE3</div>
+              </div>
+              <div class="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <div class="text-slate-300 font-medium mb-1">Signature</div>
+                <div class="text-slate-600 text-xs">Ed25519</div>
+              </div>
+              <div class="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <div class="text-slate-300 font-medium mb-1">Échange de clés</div>
+                <div class="text-slate-600 text-xs">X25519</div>
+              </div>
+              <div class="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <div class="text-slate-300 font-medium mb-1">Chiffrement symétrique</div>
+                <div class="text-slate-600 text-xs">XSalsa20-Poly1305</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800/50"></div>
+
+        <!-- RGPD by design -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="w-16 h-16 rounded-2xl bg-violet-900/50 flex items-center justify-center text-3xl mb-4">
+              ⚖️
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">RGPD by design</h2>
+            <p class="text-violet-400 font-medium text-sm">Effacement réel, pas symbolique</p>
+          </div>
+          <div class="md:col-span-8 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              Le RGPD donne un droit à l'effacement. Dans la plupart des applications, cela signifie
+              "vos données sont marquées supprimées mais restent sur nos serveurs."
+            </p>
+            <p>
+              Marmouse utilise une approche différente : la <strong class="text-slate-300">purge cryptographique par rotation de clés</strong>.
+              Quand vous effacez votre compte, les clés de chiffrement sont détruites.
+              Vos données deviennent du bruit aléatoire &mdash; mathématiquement irrecupérables.
+            </p>
+            <p>
+              C'est du RGPD by design, pas du RGPD de façade.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800/50"></div>
+
+        <!-- Zéro tracking -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="w-16 h-16 rounded-2xl bg-indigo-900/50 flex items-center justify-center text-3xl mb-4">
+              🚫
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Zéro tracking</h2>
+            <p class="text-indigo-400 font-medium text-sm">Pas de pub, pas de vente de données</p>
+          </div>
+          <div class="md:col-span-8 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              Marmouse ne contient aucun pixel de tracking, aucun SDK analytics tiers, aucune publicité.
+              Notre modèle économique repose uniquement sur l'abonnement.
+            </p>
+            <p>
+              Nous ne vendons pas, ne louons pas, ne partageons pas vos données avec des tiers.
+              Pas de "partenaires de confiance", pas d'"écosystème publicitaire", pas d'"amélioration de produit" qui cache du profilage.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs">
+              {["Aucun Google Analytics", "Aucun Meta Pixel", "Aucun Mixpanel", "Aucune pub", "Aucun tracker tiers", "Aucun cookie publicitaire"].map(item => (
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-slate-400">{item}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800/50"></div>
+
+        <!-- Open source -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="w-16 h-16 rounded-2xl bg-violet-900/50 flex items-center justify-center text-3xl mb-4">
+              🔓
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Open source</h2>
+            <p class="text-violet-400 font-medium text-sm">Le code est vérifiable</p>
+          </div>
+          <div class="md:col-span-8 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              La confiance ne se décrète pas, elle se prouve.
+              Le code source de Marmouse est public et vérifiable sur GitHub.
+              Vous pouvez inspecter comment vos données sont traitées, chiffrées, stockées.
+            </p>
+            <p>
+              C'est notre engagement envers la transparence.
+              Aucune backdoor cachée, aucun comportement non documenté.
+            </p>
+            <a
+              href="https://github.com/julienlivenais/marmouse"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+              Voir le code sur GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto CTA -->
+  <section class="py-16 border-t border-slate-800/50">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <blockquote class="text-2xl sm:text-3xl font-bold text-slate-200 leading-tight mb-8 italic">
+        "Une famille devrait pouvoir gérer son quotidien sans que des entreprises tierces n'y aient accès."
+      </blockquote>
+      <p class="text-slate-500 text-sm mb-10">La conviction qui a conduit à créer Marmouse.</p>
+      <a
+        href="https://app.marmouse.fr"
+        class="inline-block rounded-xl bg-violet-600 px-10 py-5 text-lg font-semibold text-white shadow-2xl shadow-violet-900/40 hover:bg-violet-500 transition-all hover:-translate-y-0.5"
+      >
+        Essayer Marmouse gratuitement
+      </a>
+    </div>
+  </section>
+</Layout>

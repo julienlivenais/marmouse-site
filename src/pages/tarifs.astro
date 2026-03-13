@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Tarifs — Marmouse"
+  description="Gratuit 30 jours, puis 4,99€/mois pour une famille complète. Toutes les fonctionnalités incluses, sans engagement."
+>
+  <!-- Header -->
+  <section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-violet-800/50 bg-violet-950/50 px-4 py-1.5 text-xs font-medium text-violet-300 mb-6">
+          Tarifs
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+          Simple. Honnête. Sans surprise.
+        </h1>
+        <p class="mx-auto max-w-xl text-lg text-slate-400 leading-relaxed">
+          Un seul abonnement pour toute la famille. Pas de tier freemium coupé, pas de fonctionnalité cachée derrière un paywall.
+        </p>
+      </div>
+
+      <!-- Pricing cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+        <!-- Free tier -->
+        <div class="rounded-2xl border border-slate-700 bg-slate-900 p-8 flex flex-col">
+          <div class="mb-6">
+            <h2 class="text-xl font-bold text-white mb-2">Gratuit</h2>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-4xl font-extrabold text-white">0€</span>
+            </div>
+            <p class="text-sm text-slate-500">Pendant 30 jours, sans carte bancaire</p>
+          </div>
+
+          <ul class="space-y-3 flex-1 mb-8">
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              1 famille
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Jusqu'à 4 membres
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Toutes les fonctionnalités
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Chiffrement E2E inclus
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span class="text-slate-500">Support prioritaire</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span class="text-slate-500">Accès aux fonctionnalités beta</span>
+            </li>
+          </ul>
+
+          <a
+            href="https://app.marmouse.fr"
+            class="block text-center rounded-xl border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+          >
+            Commencer gratuitement
+          </a>
+        </div>
+
+        <!-- Family tier -->
+        <div class="rounded-2xl border border-violet-600/50 bg-gradient-to-b from-violet-950/60 to-slate-900 p-8 flex flex-col relative">
+          <!-- Badge -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="rounded-full bg-violet-600 px-4 py-1 text-xs font-bold text-white shadow-lg shadow-violet-900/50">
+              Recommandé
+            </span>
+          </div>
+
+          <div class="mb-6">
+            <h2 class="text-xl font-bold text-white mb-2">Famille</h2>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-4xl font-extrabold text-white">4,99€</span>
+              <span class="text-slate-400 text-sm">/mois</span>
+            </div>
+            <p class="text-sm text-slate-500">Soit moins de 0,17€ par jour</p>
+          </div>
+
+          <ul class="space-y-3 flex-1 mb-8">
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              1 famille, membres illimités
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Toutes les fonctionnalités, pour toujours
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Chiffrement E2E inclus
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Support prioritaire par email
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Accès aux fonctionnalités beta
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <svg class="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Sans engagement — résiliable à tout moment
+            </li>
+          </ul>
+
+          <a
+            href="https://app.marmouse.fr"
+            class="block text-center rounded-xl bg-violet-600 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-900/40 hover:bg-violet-500 transition-colors"
+          >
+            Commencer &mdash; 30 jours offerts
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Note mobile -->
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm text-slate-400">
+          <span class="text-base">📱</span>
+          Disponible sur App Store &amp; Google Play — <span class="text-slate-500">bientôt</span>
+        </div>
+      </div>
+
+      <!-- FAQ Pricing -->
+      <div class="mt-20 max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">Questions fréquentes</h2>
+        <div class="space-y-4">
+          <details class="group rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-white font-medium hover:bg-slate-800/50 transition-colors list-none">
+              Que se passe-t-il après les 30 jours gratuits ?
+              <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate-400 text-sm leading-relaxed">
+              Vous pouvez souscrire à l'abonnement Famille ou continuer en mode gratuit avec des fonctionnalités réduites. Vos données restent les vôtres dans tous les cas.
+            </div>
+          </details>
+          <details class="group rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-white font-medium hover:bg-slate-800/50 transition-colors list-none">
+              Mes données sont-elles vraiment chiffrées ?
+              <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate-400 text-sm leading-relaxed">
+              Oui. Marmouse utilise Jazz CRDT avec chiffrement XSalsa20-Poly1305 bout-à-bout. Même nous n'avons pas accès à vos données — c'est cryptographiquement garanti, pas juste une promesse marketing.
+            </div>
+          </details>
+          <details class="group rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-white font-medium hover:bg-slate-800/50 transition-colors list-none">
+              Puis-je annuler à tout moment ?
+              <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate-400 text-sm leading-relaxed">
+              Oui, sans engagement, sans pénalité. Votre abonnement continue jusqu'à la fin de la période déjà payée, puis s'arrête. Vos données restent exportables.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
