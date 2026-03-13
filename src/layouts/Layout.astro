@@ -33,37 +33,37 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
 
     <title>{title}</title>
   </head>
-  <body class="bg-slate-950 text-slate-100 font-sans antialiased">
+  <body class="bg-white text-slate-900 font-sans antialiased">
     <!-- Header -->
-    <header class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/90 backdrop-blur-md">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <!-- Logo -->
-          <a href="/" class="flex items-center gap-2 text-xl font-bold text-white hover:opacity-90 transition-opacity">
+          <a href="/" class="flex items-center gap-2 text-xl font-bold text-slate-900 hover:opacity-80 transition-opacity">
             <span class="text-2xl">🐭</span>
             <span>Marmouse</span>
           </a>
 
           <!-- Nav desktop -->
           <nav class="hidden md:flex items-center gap-6">
-            <a href="/fonctionnalites" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Fonctionnalités</a>
-            <a href="/tarifs" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Tarifs</a>
-            <a href="/philosophie" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Philosophie</a>
-            <a href="/contact" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Contact</a>
+            <a href="/fonctionnalites" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Fonctionnalités</a>
+            <a href="/tarifs" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Tarifs</a>
+            <a href="/philosophie" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Philosophie</a>
+            <a href="/contact" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Contact</a>
           </nav>
 
           <!-- CTA + hamburger -->
           <div class="flex items-center gap-3">
             <a
               href="https://app.marmouse.fr"
-              class="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-900/30 hover:bg-violet-500 transition-colors"
+              class="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-violet-200 hover:bg-violet-500 transition-colors"
             >
               Essayer
             </a>
             <!-- Hamburger (mobile only) -->
             <button
               id="mobile-menu-btn"
-              class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              class="md:hidden p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
               aria-label="Ouvrir le menu"
             >
               <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,12 +78,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
       </div>
 
       <!-- Mobile menu (hidden by default) -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/60">
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/80">
         <nav class="flex flex-col px-4 py-3 gap-1">
-          <a href="/fonctionnalites" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Fonctionnalités</a>
-          <a href="/tarifs" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Tarifs</a>
-          <a href="/philosophie" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Philosophie</a>
-          <a href="/contact" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contact</a>
+          <a href="/fonctionnalites" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">Fonctionnalités</a>
+          <a href="/tarifs" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">Tarifs</a>
+          <a href="/philosophie" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">Philosophie</a>
+          <a href="/contact" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">Contact</a>
         </nav>
       </div>
     </header>
@@ -107,18 +107,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
     </script>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/60 bg-slate-950 py-12">
+    <footer class="border-t border-slate-200 bg-slate-50 py-12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-2 text-slate-400">
+          <div class="flex items-center gap-2 text-slate-500">
             <span class="text-lg">🐭</span>
-            <span class="font-semibold text-white">Marmouse</span>
+            <span class="font-semibold text-slate-800">Marmouse</span>
           </div>
           <div class="flex items-center gap-6 text-sm text-slate-500">
-            <a href="/philosophie" class="hover:text-slate-300 transition-colors">Philosophie</a>
-            <a href="/contact" class="hover:text-slate-300 transition-colors">Contact</a>
+            <a href="/philosophie" class="hover:text-slate-800 transition-colors">Philosophie</a>
+            <a href="/contact" class="hover:text-slate-800 transition-colors">Contact</a>
           </div>
-          <p class="text-sm text-slate-600">
+          <p class="text-sm text-slate-400">
             &copy; 2026 Marmouse &mdash; Fait en France 🇫🇷
           </p>
         </div>
