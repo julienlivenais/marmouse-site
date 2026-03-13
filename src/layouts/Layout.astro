@@ -52,7 +52,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
             <a href="/contact" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Contact</a>
           </nav>
 
-          <!-- CTA -->
+          <!-- CTA + hamburger -->
           <div class="flex items-center gap-3">
             <a
               href="https://app.marmouse.fr"
@@ -60,8 +60,31 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
             >
               Essayer
             </a>
+            <!-- Hamburger (mobile only) -->
+            <button
+              id="mobile-menu-btn"
+              class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              aria-label="Ouvrir le menu"
+            >
+              <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </div>
+      </div>
+
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/60">
+        <nav class="flex flex-col px-4 py-3 gap-1">
+          <a href="/fonctionnalites" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Fonctionnalités</a>
+          <a href="/tarifs" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Tarifs</a>
+          <a href="/philosophie" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Philosophie</a>
+          <a href="/contact" class="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contact</a>
+        </nav>
       </div>
     </header>
 
@@ -69,6 +92,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://marmouse
     <main>
       <slot />
     </main>
+
+    <!-- Mobile menu toggle -->
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+        hamburgerIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
+      });
+    </script>
 
     <!-- Footer -->
     <footer class="border-t border-slate-800/60 bg-slate-950 py-12">
