@@ -21,6 +21,17 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
+      <!-- Beta notice -->
+      <div class="rounded-2xl border border-amber-700/40 bg-amber-950/30 p-5 max-w-3xl mx-auto mb-10 flex items-start gap-4">
+        <span class="text-2xl flex-shrink-0">🔒</span>
+        <div>
+          <h3 class="font-semibold text-amber-300 mb-1">Application en bêta fermée</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Les tarifs ci-dessous sont ceux prévus pour la version publique. Pendant la bêta, l'accès est <strong class="text-slate-300">gratuit et sur invitation uniquement</strong>. Votre code vous sera envoyé directement.
+          </p>
+        </div>
+      </div>
+
       <!-- Pricing cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
 
@@ -75,9 +86,9 @@ import Layout from '../layouts/Layout.astro';
 
           <a
             href="https://app.marmouse.fr"
-            class="block text-center rounded-xl border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+            class="block text-center rounded-xl border border-amber-700/50 bg-amber-950/40 px-6 py-3 font-semibold text-amber-300 hover:bg-amber-950/60 hover:text-amber-200 transition-colors"
           >
-            Commencer gratuitement
+            Rejoindre la bêta — sur invitation
           </a>
         </div>
 

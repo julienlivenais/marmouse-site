@@ -16,8 +16,14 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-violet-800/50 bg-violet-950/50 px-4 py-1.5 text-xs font-medium text-violet-300 mb-8">
+      <!-- Badge bêta fermée -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-amber-700/50 bg-amber-950/50 px-4 py-1.5 text-xs font-medium text-amber-300 mb-3">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        Bêta fermée &mdash; accès sur invitation
+      </div>
+
+      <!-- Badge tech -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-violet-800/50 bg-violet-950/50 px-4 py-1.5 text-xs font-medium text-violet-300 mb-8 ml-2">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-violet-400"></span>
         Local-first &bull; Chiffrement E2E &bull; RGPD by design
       </div>
@@ -40,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
           href="https://app.marmouse.fr"
           class="w-full sm:w-auto rounded-xl bg-violet-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-violet-900/40 hover:bg-violet-500 transition-all hover:shadow-violet-900/60 hover:-translate-y-0.5"
         >
-          Essayer gratuitement
+          Rejoindre la bêta
         </a>
         <a
           href="/fonctionnalites"
@@ -52,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Trust signals -->
       <p class="mt-8 text-sm text-slate-600">
-        Aucune carte bancaire requise &bull; 30 jours gratuits &bull; Annulation à tout moment
+        Bêta fermée &bull; Accès sur invitation &bull; Sans carte bancaire
       </p>
     </div>
   </section>
@@ -251,18 +257,25 @@ import Layout from '../layouts/Layout.astro';
   <!-- CTA Final -->
   <section class="py-20 sm:py-28 border-t border-slate-800/50">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-amber-700/50 bg-amber-950/50 px-4 py-1.5 text-xs font-medium text-amber-300 mb-6">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        Bêta fermée en cours
+      </div>
       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-        Prêt à reprendre le contrôle de vos données familiales ?
+        Rejoignez les premières familles Marmouse
       </h2>
       <p class="text-slate-400 text-lg mb-10">
-        Gratuit 30 jours. Aucune carte bancaire. Vos données restent les vôtres.
+        Accès sur invitation uniquement. Vos données restent privées, chiffrées de bout en bout.
       </p>
       <a
         href="https://app.marmouse.fr"
         class="inline-block rounded-xl bg-violet-600 px-10 py-5 text-lg font-semibold text-white shadow-2xl shadow-violet-900/40 hover:bg-violet-500 transition-all hover:-translate-y-0.5"
       >
-        Commencer gratuitement
+        Rejoindre la bêta
       </a>
+      <p class="mt-6 text-xs text-slate-600">
+        Vous avez un code d'invitation ? Rendez-vous directement sur l'app.
+      </p>
     </div>
   </section>
 </Layout>
