@@ -1,0 +1,51 @@
+name: Build + Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: deploy-marmouse-site
+      cancel-in-progress: false
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          port: ${{ secrets.VPS_SSH_PORT }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            echo "=== Pulling latest code ==="
+            cd /opt/marmouse-site
+            git pull origin main
+
+            echo "=== Building image ==="
+            docker build -t marmouse-site .
+
+            echo "=== Deploying container ==="
+            docker stop marmouse-site 2>/dev/null || true
+            docker rm marmouse-site 2>/dev/null || true
+            docker run -d \
+              --name marmouse-site \
+              -p 4175:80 \
+              --restart unless-stopped \
+              marmouse-site
+
+            echo "=== Verifying ==="
+            sleep 2
+            if docker ps | grep -q marmouse-site; then
+              echo "✅ marmouse-site running"
+            else
+              echo "❌ marmouse-site failed"
+              docker logs marmouse-site --tail 20
+              exit 1
+            fi
+
+            echo "=== Deploy complete ==="
